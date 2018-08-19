@@ -11,7 +11,7 @@ const url = "https://api.imgflip.com/get_memes";
 // const newMemeUrl = 'https://api.imgflip.com/caption_image'
 const myUrl = process.env["NODE_ENV"] === "development"
   ? "http://localhost:3000/api/v1/memes"
-  : "https://meme-generator-api.herokuapp.com/";
+  : "http://meme-generator-api.herokuapp.com/";
 
 class App extends React.Component {
   constructor() {
