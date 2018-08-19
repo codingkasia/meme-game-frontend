@@ -77,7 +77,7 @@ class App extends React.Component {
         "Content-Type": "application/json",
         Accept: "application/json",
         "Access-Control-Allow-Origin":
-          "https://meme-generator-client-edxtwgqbdg.now.sh/",
+          "https://meme-generator-client-lxyobquwnz.now.sh/",
         "Access-Control-Allow-Origin": "*"
       },
       body: JSON.stringify({
