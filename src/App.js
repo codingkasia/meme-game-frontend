@@ -72,7 +72,7 @@ class App extends React.Component {
   };
   fetchClickedMeme = memeId => {
     return fetch(myUrl, { method: "POST",
-      headers: { "Content-Type": "application/json", Accept: "application/json", "Access-Control-Allow-Origin": "https://meme-generator-client-xmhpnalbnx.now.sh/", "Access-Control-Allow-Credentials": true }, body: JSON.stringify(
+      headers: { "Content-Type": "application/json", Accept: "application/json", "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Credentials": true }, body: JSON.stringify(
         {
           template_id: memeId,
           username: "kasiarosenb",
