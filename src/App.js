@@ -9,6 +9,9 @@ import Search from './components/Search'
 // import Comments from "./components/Comments";
 const url = "https://api.imgflip.com/get_memes";
 // const newMemeUrl = 'https://api.imgflip.com/caption_image'
+const myUrl = process.env["NODE_ENV"] === "development"
+  ? "http://localhost:3000/api/v1/memes"
+  : "https ://meme-generator-api.herokuapp.com/";
 
 class App extends React.Component {
   constructor() {
@@ -63,12 +66,12 @@ class App extends React.Component {
       );
   };
   fetchFromBackend = () => {
-    return fetch("http://localhost:3000/api/v1/memes")
+    return fetch(myUrl)
       .then(resp => resp.json())
       .then(result => console.log(result));
   };
   fetchClickedMeme = memeId => {
-    return fetch("http://localhost:3000/api/v1/memes", {
+    return fetch(myUrl, {
       method: "POST",
 
       headers: {
