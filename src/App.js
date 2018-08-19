@@ -11,7 +11,7 @@ const url = "https://api.imgflip.com/get_memes";
 // const newMemeUrl = 'https://api.imgflip.com/caption_image'
 const myUrl = process.env["NODE_ENV"] === "development"
   ? "http://localhost:3000/api/v1/memes"
-  : "http://meme-generator-api.herokuapp.com/";
+  : "https://meme-generator-api.herokuapp.com/";
 
 class App extends React.Component {
   constructor() {
@@ -76,7 +76,10 @@ class App extends React.Component {
 
       headers: {
         "Content-Type": "application/json",
-        Accept: "application/json"
+        Accept: "application/json",
+        "Access-Control-Allow-Origin":
+          "https://polar-garden-85035.herokuapp.com/",
+        "Access-Control-Allow-Credentials": true
       },
       body: JSON.stringify({
         template_id: memeId,
