@@ -71,16 +71,23 @@ class App extends React.Component {
       .then(result => console.log(result));
   };
   fetchClickedMeme = memeId => {
-    return fetch(myUrl, { method: "POST",
-      headers: { "Content-Type": "application/json", Accept: "application/json", "Access-Control-Allow-Origin": "*" }, body: JSON.stringify(
-        {
-          template_id: memeId,
-          username: "kasiarosenb",
-          password: "kasiarosenb",
-          text0: this.state.text0,
-          text1: this.state.text1
-        }
-      ) })
+    return fetch(myUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        "Access-Control-Allow-Origin":
+          "https://meme-generator-client-edxtwgqbdg.now.sh/",
+        "Access-Control-Allow-Origin": "*"
+      },
+      body: JSON.stringify({
+        template_id: memeId,
+        username: "kasiarosenb",
+        password: "kasiarosenb",
+        text0: this.state.text0,
+        text1: this.state.text1
+      })
+    })
       .then(response => response.json())
       .then(result =>
         this.setState({ myMemes: [...this.state.myMemes, result] })
